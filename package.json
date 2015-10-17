@@ -1,5 +1,5 @@
 {
-  "name": "DAC Gulp",
+  "name": "DAC_Gulp",
   "version": "1.0.0",
   "description": "DAC gulp file configuration",
   "main": "index.js",
