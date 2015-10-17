@@ -47,7 +47,6 @@ gulp.task('styles', function () {
     .pipe(plugins.minifyCss())
     .pipe(plugins.sourcemaps.write()) // for external file add ('../maps')
     .pipe(gulp.dest(css_dir))
-    .pipe(plugins.filesize())
     .pipe(plugins.livereload())
     .resume();
 });
@@ -70,16 +69,16 @@ gulp.task('comb',  function() {
 //
 //Lint the SASS file function -- gulp lint
 //
-gulp.task('lint',  function() {
-  return gulp.src(sass_dir + "*.scss")
-    .pipe(plugins.plumber({
-      errorHandler: function (err) {
-        console.log(err);
-        this.emit('end');
-      }
-    }))
-    .pipe(plugins.scsslint());
-});
+// gulp.task('lint',  function() {
+//   return gulp.src(sass_dir + "*.scss")
+//     .pipe(plugins.plumber({
+//       errorHandler: function (err) {
+//         console.log(err);
+//         this.emit('end');
+//       }
+//     }))
+//     .pipe(plugins.scsslint());
+// });
 
 
 //
