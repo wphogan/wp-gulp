@@ -8,9 +8,9 @@ Setup instuctions:
 */
 
 //theme, sass & css directories
-var theme_dir   = '../twentyfifteen',
-    sass_dir    = theme_dir + '/stylesheets/sass/',
-    css_dir     = theme_dir + '/stylesheets/css';
+var theme_dir   = '../custome_template',
+    sass_dir    = theme_dir + '/sass/sass/',
+    css_dir     = theme_dir + '/sass/stylesheets';
 
 // Include gulp
 var gulp     = require('gulp');
