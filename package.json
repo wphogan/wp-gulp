@@ -12,6 +12,7 @@
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
     "gulp-contains":"",
+    "gulp-concat":"",
     "gulp-csscomb": "^3.0.6",
     "gulp-imagemin": "^2.3.0",
     "gulp-insert": "",
