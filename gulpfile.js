@@ -85,37 +85,36 @@ gulp.task('production', ['images'], function () {
 });
 
 
-var gzip_compression = `<IfModule mod_deflate.c>
-    # Compress HTML, CSS, JavaScript, Text, XML and fonts
-    AddOutputFilterByType DEFLATE application/javascript
-    AddOutputFilterByType DEFLATE application/rss+xml
-    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
-    AddOutputFilterByType DEFLATE application/x-font
-    AddOutputFilterByType DEFLATE application/x-font-opentype
-    AddOutputFilterByType DEFLATE application/x-font-otf
-    AddOutputFilterByType DEFLATE application/x-font-truetype
-    AddOutputFilterByType DEFLATE application/x-font-ttf
-    AddOutputFilterByType DEFLATE application/x-javascript
-    AddOutputFilterByType DEFLATE application/xhtml+xml
-    AddOutputFilterByType DEFLATE application/xml
-    AddOutputFilterByType DEFLATE font/opentype
-    AddOutputFilterByType DEFLATE font/otf
-    AddOutputFilterByType DEFLATE font/ttf
-    AddOutputFilterByType DEFLATE image/svg+xml
-    AddOutputFilterByType DEFLATE image/x-icon
-    AddOutputFilterByType DEFLATE text/css
-    AddOutputFilterByType DEFLATE text/html
-    AddOutputFilterByType DEFLATE text/javascript
-    AddOutputFilterByType DEFLATE text/plain
-    AddOutputFilterByType DEFLATE text/xml
-
-    # Remove browser bugs (only needed for really old browsers)
-    BrowserMatch ^Mozilla/4 gzip-only-text/html
-    BrowserMatch ^Mozilla/4\.0[678] no-gzip
-    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-    Header append Vary User-Agent
-  </IfModule>
-  `;
+var gzip_compression = '<IfModule mod_deflate.c>\n' +
+   ' # Compress HTML, CSS, JavaScript, Text, XML and fonts\n' +
+    'AddOutputFilterByType DEFLATE application/javascript\n' +
+    'AddOutputFilterByType DEFLATE application/rss+xml\n' +
+    'AddOutputFilterByType DEFLATE application/vnd.ms-fontobject\n' +
+    'AddOutputFilterByType DEFLATE application/x-font\n' +
+    'AddOutputFilterByType DEFLATE application/x-font-opentype\n' +
+    'AddOutputFilterByType DEFLATE application/x-font-otf\n' +
+    'AddOutputFilterByType DEFLATE application/x-font-truetype\n' +
+    'AddOutputFilterByType DEFLATE application/x-font-ttf\n' +
+    'AddOutputFilterByType DEFLATE application/x-javascript\n' +
+    'AddOutputFilterByType DEFLATE application/xhtml+xml\n' +
+    'AddOutputFilterByType DEFLATE application/xml\n' +
+    'AddOutputFilterByType DEFLATE font/opentype\n' +
+    'AddOutputFilterByType DEFLATE font/otf\n' +
+    'AddOutputFilterByType DEFLATE font/ttf\n' +
+    'AddOutputFilterByType DEFLATE image/svg+xml\n' +
+    'AddOutputFilterByType DEFLATE image/x-icon\n' +
+    'AddOutputFilterByType DEFLATE text/css\n' +
+    'AddOutputFilterByType DEFLATE text/html\n' +
+    'AddOutputFilterByType DEFLATE text/javascript\n' +
+    'AddOutputFilterByType DEFLATE text/plain\n' +
+    'AddOutputFilterByType DEFLATE text/xml\n\n' +
+    
+    '# Remove browser bugs (only needed for really old browsers)\n' +
+    'BrowserMatch ^Mozilla/4 gzip-only-text/html\n' +
+    'BrowserMatch ^Mozilla/4\.0[678] no-gzip\n' +
+    'BrowserMatch \bMSIE !no-gzip !gzip-only-text/html\n' +
+    'Header append Vary User-Agent\n' +
+  '</IfModule>\n\n';
 
 
 //
