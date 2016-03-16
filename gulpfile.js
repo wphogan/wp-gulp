@@ -177,7 +177,7 @@ gulp.task('jsp', ['js'], function() {
 //
 // Watch sass file(s) for changes -- gulp watch, run styles and images initially
 //
-gulp.task('watch', ['styles', 'images', 'gzip'], function() {
+gulp.task('watch', ['styles', 'images'], function() {
     plugins.livereload.listen()
     gulp.watch(sass_dir + "*.scss", ['styles'])
     // When there is a change, log a message in the console
