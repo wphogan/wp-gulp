@@ -1,9 +1,7 @@
 /*
 Setup instuctions:
-  In /themes folder run:
-    mkdir wp-gulp && cd wp-gulp && npm init
-    npm install --save-dev gulp gulp-load-plugins gulp-sass gulp-csscomb gulp-rename gulp-concat gulp-cache gulp-imagemin gulp-rename gulp-uglify gulp-load-plugins gulp-scss-lint gulp-notify gulp-sourcemaps gulp-autoprefixer gulp-minify-css gulp-livereload gulp-filesize gulp-plumber
-    sublime gulpfile.js
+  In site root folder run:
+    `cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && sublime gulpfile.js && npm install`
 */
 
 //theme, sass & css directories
