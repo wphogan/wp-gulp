@@ -21,7 +21,7 @@ gulp.task('default', ['watch']);
 //error handling
 var onError = function (err) {  
   console.log(err.toString())
-  this.emit("error", new Error("Something happend: Error message!"))
+  this.emit("error", new Error("Something happened: Error message!"))
   this.emit('end')
 };
  function handleError (err) {  
