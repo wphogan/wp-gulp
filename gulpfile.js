@@ -17,7 +17,7 @@ var gulp     = require('gulp');
 // Include plugins
 var plugins  = require('gulp-load-plugins')();
 
-//Gulp default task, runs with 'gulp' -- gulp
+//Gulp default task, watches changes in SASS and compresses images -- runs with 'gulp'
 gulp.task('default', ['watch']);
 
 //error handling
@@ -31,7 +31,7 @@ var onError = function (err) {
   this.emit('end')
 };
 
-//main function: compile SASS files, minify CSS -- gulp styles
+//main function: compile SASS files, minify CSS, add sourcemap
 gulp.task('styles', function () {
   return gulp.src(sass_dir + "*.scss")
     .pipe(plugins.plumber({
@@ -83,69 +83,6 @@ gulp.task('production', ['images'], function () {
     .pipe(plugins.livereload())
     .resume();
 });
-
-
-var gzip_compression = '<IfModule mod_deflate.c>\n' +
-   ' # Compress HTML, CSS, JavaScript, Text, XML and fonts\n' +
-    'AddOutputFilterByType DEFLATE application/javascript\n' +
-    'AddOutputFilterByType DEFLATE application/rss+xml\n' +
-    'AddOutputFilterByType DEFLATE application/vnd.ms-fontobject\n' +
-    'AddOutputFilterByType DEFLATE application/x-font\n' +
-    'AddOutputFilterByType DEFLATE application/x-font-opentype\n' +
-    'AddOutputFilterByType DEFLATE application/x-font-otf\n' +
-    'AddOutputFilterByType DEFLATE application/x-font-truetype\n' +
-    'AddOutputFilterByType DEFLATE application/x-font-ttf\n' +
-    'AddOutputFilterByType DEFLATE application/x-javascript\n' +
-    'AddOutputFilterByType DEFLATE application/xhtml+xml\n' +
-    'AddOutputFilterByType DEFLATE application/xml\n' +
-    'AddOutputFilterByType DEFLATE font/opentype\n' +
-    'AddOutputFilterByType DEFLATE font/otf\n' +
-    'AddOutputFilterByType DEFLATE font/ttf\n' +
-    'AddOutputFilterByType DEFLATE image/svg+xml\n' +
-    'AddOutputFilterByType DEFLATE image/x-icon\n' +
-    'AddOutputFilterByType DEFLATE text/css\n' +
-    'AddOutputFilterByType DEFLATE text/html\n' +
-    'AddOutputFilterByType DEFLATE text/javascript\n' +
-    'AddOutputFilterByType DEFLATE text/plain\n' +
-    'AddOutputFilterByType DEFLATE text/xml\n\n' +
-    
-    '# Remove browser bugs (only needed for really old browsers)\n' +
-    'BrowserMatch ^Mozilla/4 gzip-only-text/html\n' +
-    'BrowserMatch ^Mozilla/4\.0[678] no-gzip\n' +
-    'BrowserMatch \bMSIE !no-gzip !gzip-only-text/html\n' +
-    'Header append Vary User-Agent\n' +
-  '</IfModule>\n\n';
-
-
-//
-//Add gzip to htaccess
-//
-gulp.task('gzip', function () {
-  return gulp.src('../../\.htaccess')
-    .on('error', handleError)
-    .pipe(plugins.contains(gzip_compression))
-    .on('error', handleError)
-    .pipe(plugins.insert.prepend(gzip_compression))
-    .pipe(gulp.dest('../../'))
-    .resume();
-});
-
-
-//
-//CSScomb the SASS file function -- gulp comb
-//
-gulp.task('comb',  function() {
-  return gulp.src(sass_dir + "*.scss")
-    .pipe(plugins.plumber({
-      errorHandler: function (err) {
-        console.log(err);
-        this.emit('end');
-      }
-    }))
-    .pipe(plugins.csscomb())
-    .pipe(gulp.dest(sass_dir));
-});
-
 
 //
 //Minify images -- gulp images
