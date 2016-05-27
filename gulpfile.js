@@ -91,6 +91,16 @@ gulp.task('images', function() {
     .pipe(gulp.dest(theme_dir + '/images'));
 });
 
+//minify ALL wordpress uploaded images
+gulp.task('all-images',function(){
+  return gulp.src([
+      '../uploads/**/*'
+  ],  {base: './source/'}) 
+  .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+  .pipe(gulp.dest('./public/assets/'));
+});
+
+
 //
 // Concatenate & Minify non-min JS files
 //
