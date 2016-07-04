@@ -1,7 +1,6 @@
 /*
 Setup instuctions:
-  In site root folder run:
-    `cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && sublime gulpfile.js && npm install`
+  In site root folder run: `cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && sublime gulpfile.js && npm install`
 */
 
 //theme, sass & css directories
@@ -112,7 +111,9 @@ gulp.task('js', function() {
     .pipe(gulp.dest(theme_dir + '/js'));
 });
 
-//production js -- minifies all non min js, concats into single file
+//
+// production js -- minifies all non min js, concats into single file
+//
 gulp.task('jsp', ['js'], function() {
   return gulp.src(theme_dir + '/js/*min.js')
     .pipe(plugins.concat('mini2.js'))
