@@ -1,6 +1,5 @@
 # wp-gulp 
 ##### A simple gulpfile for WordPress theme development
-------
 *Requires Node Package Manager.* Instructions for installing NPM on [Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows), [Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac), and [Linux](http://blog.teamtreehouse.com/install-node-js-npm-linux).
 
 ### Installation
