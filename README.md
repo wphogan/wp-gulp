@@ -1,245 +1,39 @@
-# wp-gulp
-run 'newwp' to install gulp file from site root -- requires bash profile below (view this 'Raw' and copy/paste)
-'wp' -- shortcut to wp-content
-'wpg' -- shortcut to run gulp after intsallation
-
-Bash profile: 
-alias wp='cd wp-content/'
-alias wpg='cd wp-content/wp-gulp && gulp'
-alias newwp='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && sublime gulpfile.js && npm install'
-
-<snippet>
-  <content><![CDATA[
-# ${1:Project Name}
-
-TODO: Write a project description
-
-## Installation
-
-TODO: Describe the installation process
-
-## Usage
-
-TODO: Write usage instructions
-
-## Contributing
-
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
-
-## History
-
-TODO: Write history
-
-## Credits
-
-TODO: Write credits
-
-## License
-
-TODO: Write license
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>run 'newwp' to install gulp file from site root -- requires bash profile below (view this 'Raw' and copy/paste)
-'wp' -- shortcut to wp-content
-'wpg' -- shortcut to run gulp after intsallation
-
-Bash profile: 
-alias wp='cd wp-content/'
-alias wpg='cd wp-content/wp-gulp && gulp'
-alias newwp='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && sublime gulpfile.js && npm install'# WP-Gulp
-##### A gulpfile for WordPress theme development
+# wp-gulp 
+##### A simple gulpfile for WordPress theme development
 ------
 *Requires Node Package Manager.* Instructions for installing NPM on [Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows), [Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac), and [Linux](http://blog.teamtreehouse.com/install-node-js-npm-linux).
 
 ### Installation
-1. Copy wp-gulp to the 'wp-content' folder
+1. Copy wp-gulp to the 'wp-content' folder: `git clone git@github.com:wphogan/wp-gulp.git`
 2. From the new 'wp-gulp' directory, run `npm install`.
 3. From the 'wp-gulp' directory, run `gulp`.
 4. The `gulp` command is configured with LiveReload. It automatically injects CSS edits into the browser. Add and activate LiveReload to [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/livereload/).
 
-Running `gulp` will watch changes made to files in the 'theme_name/sass/sass' folder. Sass files are compiled, auto-prefixed, and minified into a single CSS file. A source map is added to the CSS file. Errors in Sass code will produce a desktop alert.
-
 ### Setup
-1. Once installed, open 'gulpfile.js' and replace 'custom_theme' with the name of your theme.
+1. Once installed, open 'gulpfile.js' and replace 'custom_theme' with the name of the theme.
 2. Make sure the Sass and CSS directories listed in gulpfile.js are accurate.
 
-### Automate WP-Gulp (Mac)
-To rapidly add WP-Gulp to a WordPress installation, add the follow
+
+### Gulp Tasks:
+- **gulp**
+  - gulp will watch changes made to SCSS files in the Sass folder. Once a file is changed, it runs the 'styles' task, and injects the new CSS into the browser via LiveReload.
+- **gulp styles**
+  - gulp styles compiles, auto-prefixes, and minifies SCSS files in the Sass folder into a single CSS file. A source map is added to the CSS file. Errors in Sass code will produce a desktop alert (Mac only).
+- **gulp js**
+  - gulp js will concatenate and minify all non-minified javascript files in the theme's javascript directory
+- **gulp images** 
+  - gulp images will optimize any images in the theme's image folder
+
+### Automate WP-Gulp Installation and Execution (Mac)
+To rapidly add and run WP-Gulp to a WordPress site, edit your bash_profile:
 ```sh
 $ edit .bash_profile
 ```
-run 'newwp' to install gulp file from site root -- requires bash profile below (view this 'Raw' and copy/paste)
-'wp' -- shortcut to wp-content
-'wpg' -- shortcut to run gulp after intsallation
-
-Bash profile: 
-alias wp='cd wp-content/'
-alias wpg='cd wp-content/wp-gulp && gulp'
-alias newwp='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && sublime gulpfile.js && npm install'
-
-  - Type some Markdown on the left
-  - See HTML in the right
-  - Magic
-
-You can also:
-  - Import and save files from GitHub, Dropbox, Google Drive and One Drive
-  - Drag and drop files into Dillinger
-  - Export documents as Markdown, HTML and PDF
-
-Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site][df1]
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
-
-### Version
-3.2.7
-
-### Tech
-
-Dillinger uses a number of open source projects to work properly:
-
-* [AngularJS] - HTML enhanced for web apps!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [keymaster.js] - awesome keyboard handler lib by [@thomasfuchs]
-* [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
-### Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
-
-You need Gulp installed globally:
-
-```sh
-$ npm i -g gulp
+And add the following code to it:
 ```
-
-```sh
-$ git clone [git-repo-url] dillinger
-$ cd dillinger
-$ npm i -d
-$ NODE_ENV=production node app
+alias rungulp='cd wp-content/wp-gulp && gulp' 
+alias newgulp='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && edit gulpfile.js && npm install'
 ```
+With this bash_profile, entering `newgulp` from the root of a WordPress site will install the wp-gulp folder within the wp-content folder.
 
-### Plugins
-
-Dillinger is currently extended with the following plugins
-
-* Dropbox
-* Github
-* Google Drive
-* OneDrive
-
-Readmes, how to use them in your own application can be found here:
-
-* [plugins/dropbox/README.md] [PlDb]
-* [plugins/github/README.md] [PlGh]
-* [plugins/googledrive/README.md] [PlGd]
-* [plugins/onedrive/README.md] [PlOd]
-
-### Development
-
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantanously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-```sh
-$ node app
-```
-
-Second Tab:
-```sh
-$ gulp watch
-```
-
-(optional) Third:
-```sh
-$ karma start
-```
-
-### Docker
-Dillinger is very easy to install and deploy in a Docker container.
-
-By default, the Docker will expose port 80, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
-
-```sh
-cd dillinger
-docker build -t <youruser>/dillinger:latest .
-```
-This will create the dillinger image and pull in the necessary dependencies. Once done, run the Docker and map the port to whatever you wish on your host. In this example, we simply map port 80 of the host to port 80 of the Docker (or whatever port was exposed in the Dockerfile):
-
-```sh
-docker run -d -p 80:80 --restart="always" <youruser>/dillinger:latest
-```
-
-Verify the deployment by navigating to your server address in your preferred browser.
-
-### N|Solid and NGINX
-
-More details coming soon.
-
-#### docker-compose.yml
-
-Change the path for the nginx conf mounting path to your full path, not mine!
-
-### Todos
-
- - Write Tests
- - Rethink Github Save
- - Add Code Comments
- - Add Night Mode
-
-License
-----
-
-MIT
-
-
-**Free Software, Hell Yeah!**
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [@thomasfuchs]: <http://twitter.com/thomasfuchs>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [keymaster.js]: <https://github.com/madrobby/keymaster>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]:  <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-
+After gulp is installed, entering `rungulp` from the site's root will run the default gulp task 'gulp'.
