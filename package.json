@@ -14,7 +14,6 @@
     "gulp-cache"       : "",
     "gulp-contains"    : "",
     "gulp-concat"      : "",
-    "gulp-csscomb"     : "^3.0.6",
     "gulp-imagemin"    : "^2.3.0",
     "gulp-insert"      : "",
     "gulp-livereload"  : "^3.8.1",
