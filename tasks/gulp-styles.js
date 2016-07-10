@@ -4,7 +4,15 @@
 //
 module.exports = function (gulp, plugins, theme_dir, sass_dir, css_dir) {
     return function () {
-        return require('./error.js');
+        var onError = function (err) {  
+          console.log(err.toString())
+          this.emit("error", new Error("Something happened: Error message!"))
+          this.emit('end')
+        };
+         function handleError (err) {  
+          console.log(err.toString())
+          this.emit('end')
+        };
         return gulp.src(sass_dir + "*.scss")
           .pipe(plugins.plumber({
             errorHandler: function (err) {
@@ -24,7 +32,7 @@ module.exports = function (gulp, plugins, theme_dir, sass_dir, css_dir) {
           .pipe(plugins.minifyCss())
           .pipe(plugins.sourcemaps.write()) // for external file add ('../maps')
           .pipe(gulp.dest(css_dir))
-          .pipe(livereload())
+          .pipe(plugins.livereload())
           .resume();
     };
 };
