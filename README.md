@@ -15,23 +15,23 @@
 
 ### Gulp Tasks:
 - **gulp**
-  - gulp will watch changes made to SCSS files in the Sass folder. Once a file is changed, it runs the 'styles' task, and injects the new CSS into the browser via LiveReload.
+  - watch changes made to SCSS files in the Sass folder. Once a file is edited and saved, it runs the 'styles' task and injects the new CSS into the browser via LiveReload.
 - **gulp styles**
-  - gulp styles compiles, auto-prefixes, and minifies SCSS files in the Sass folder into a single CSS file. A source map is added to the CSS file. Errors in Sass code will produce a desktop alert (Mac only).
+  - compile, auto-prefixe, and minify SCSS files in the Sass folder into a single CSS file. A source map is added to the CSS file. Errors in Sass code will produce a desktop alert (Mac only).
 - **gulp js**
-  - gulp js will concatenate and minify all non-minified javascript files in the theme's javascript directory
+  - concatenate and minify all non-minified javascript files in the theme's javascript directory
 - **gulp images** 
-  - gulp images will optimize any images in the theme's image folder
+  - optimize any images in the theme's image folder
 
-### Automate WP-Gulp Installation and Execution (Mac)
-To rapidly add and run WP-Gulp to a WordPress site, edit your bash_profile:
+### Tips for Quick WP-Gulp Installation and Execution (Mac)
+To rapidly install and run WP-Gulp, edit your bash_profile:
 ```sh
-$ edit .bash_profile
+$ open ~/.bash_profile
 ```
 And add the following code to it:
 ```
 alias rungulp='cd wp-content/wp-gulp && gulp' 
-alias newgulp='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && edit gulpfile.js && npm install'
+alias newgulp='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && open gulpfile.js && npm install'
 ```
 With this bash_profile, entering `newgulp` from the root of a WordPress site will install the wp-gulp folder within the wp-content folder.
 
