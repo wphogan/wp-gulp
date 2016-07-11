@@ -23,8 +23,34 @@ gulp.task('js', getTask('gulp-js.js'));
 // gulp styles
 gulp.task('styles', getTask('gulp-styles.js'));
 
-// gulp watch 
-gulp.task('watch', getTask('gulp-watch.js'));
+// gulp comb 
+gulp.task('comb', getTask('gulp-comb.js'));
 
-// Gulp default task, watches changes in SASS and compresses images -- runs with 'gulp'
-gulp.task('default', ['watch']);
+// gulp scss2sass
+gulp.task('scss2sass', getTask('gulp-scss2sass.js'));
+
+// gulp sass2scss
+gulp.task('sass2scss', getTask('gulp-sass2scss.js'));
+
+// gulp
+gulp.task('default', ['watch','styles','comb','images']);
+
+// gulp watch
+gulp.task('watch', function() {
+  plugins.livereload.listen()
+  gulp.watch(sass_dir + "*.+(scss|sass)", ['styles', 'comb'])
+  // When there is a change, log a message in the console
+  .on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+  });
+});
+
+// gulp sass
+gulp.task('sass', ['styles','comb','images'], function() {
+  plugins.livereload.listen()
+  gulp.watch(sass_dir + "*.+(sass)", ['sass2scss', 'styles','comb'])
+  // When there is a change, log a message in the console
+  .on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+  });
+});

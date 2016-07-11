@@ -13,7 +13,7 @@ module.exports = function (gulp, plugins, theme_dir, sass_dir, css_dir) {
           console.log(err.toString())
           this.emit('end')
         };
-        return gulp.src(sass_dir + "*.scss")
+        return gulp.src(sass_dir + "*.+(scss|sass)")
           .pipe(plugins.plumber({
             errorHandler: function (err) {
               console.log(err);
