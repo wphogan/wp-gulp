@@ -37,11 +37,13 @@ gulp.task('default', ['watch','images']);
 
 // gulp watch
 gulp.task('watch', function() {
-  plugins.livereload.listen()
+  plugins.livereload.listen();
   gulp.watch(sass_dir + "*.+(scss|sass)", ['styles'])
-  // When there is a change, log a message in the console
   .on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+  });
+  gulp.watch([theme_dir + '/*.php', theme_dir + '/*.js'], function (files){
+    plugins.livereload.changed(files)
   });
 });
 
