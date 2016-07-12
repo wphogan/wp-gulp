@@ -33,12 +33,12 @@ gulp.task('scss2sass', getTask('gulp-scss2sass.js'));
 gulp.task('sass2scss', getTask('gulp-sass2scss.js'));
 
 // gulp
-gulp.task('default', ['watch','styles','comb','images']);
+gulp.task('default', ['watch','images']);
 
 // gulp watch
 gulp.task('watch', function() {
   plugins.livereload.listen()
-  gulp.watch(sass_dir + "*.+(scss|sass)", ['styles', 'comb'])
+  gulp.watch(sass_dir + "*.+(scss|sass)", ['styles'])
   // When there is a change, log a message in the console
   .on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
@@ -48,7 +48,7 @@ gulp.task('watch', function() {
 // gulp sass
 gulp.task('sass', ['styles','comb','images'], function() {
   plugins.livereload.listen()
-  gulp.watch(sass_dir + "*.+(sass)", ['sass2scss', 'styles','comb'])
+  gulp.watch(sass_dir + "*.+(sass)", ['sass2scss', 'styles'])
   // When there is a change, log a message in the console
   .on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');

@@ -14,6 +14,8 @@ module.exports = function (gulp, plugins, theme_dir, sass_dir, css_dir) {
           this.emit('end')
         };
         return gulp.src(sass_dir + "*.+(scss|sass)")
+          .pipe(plugins.csscomb('./.css_comb_settings.json'))
+          .pipe(gulp.dest(sass_dir))
           .pipe(plugins.plumber({
             errorHandler: function (err) {
               console.log(err);

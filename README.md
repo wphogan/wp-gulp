@@ -15,13 +15,19 @@
 
 ### Gulp Tasks:
 - **gulp**
-  - watch changes made to SCSS files in the Sass folder. Once a file is edited and saved, it runs the 'styles' task and injects the new CSS into the browser via LiveReload.
+  - watch changes made to SCSS files in the Sass folder. Once a file is edited and saved, it runs the 'styles' task, combs the SCSS file, and injects the new CSS into the browser via LiveReload.
 - **gulp styles**
   - compile, auto-prefixe, and minify SCSS files in the Sass folder into a single CSS file. A source map is added to the CSS file. Errors in Sass code will produce a desktop alert (Mac only).
 - **gulp js**
   - concatenate and minify all non-minified javascript files in the theme's javascript directory
 - **gulp images** 
   - optimize any images in the theme's image folder
+- **gulp scss2sass** 
+  - converts scss files to sass files
+- **gulp sass2scss** 
+  - converts sass files to scss files
+- **gulp sass** 
+  - watch changes made to sass files in the Sass folder. Once a file is edited and saved, it syncs the changes with an scss file and then runs the 'styles' task.
 
 ### Tips for Quick WP-Gulp Installation and Execution (Mac)
 To rapidly install and run WP-Gulp, edit your bash_profile:
