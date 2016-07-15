@@ -1,5 +1,5 @@
 // Theme, Sass, & CSS directories
-var theme_dir   = '../themes/custom_template',
+var theme_dir   = '../themes/cwa_la',
     sass_dir    = theme_dir + '/sass/sass/',
     css_dir     = theme_dir + '/sass/stylesheets';
 
