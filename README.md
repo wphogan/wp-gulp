@@ -26,8 +26,10 @@
   - converts scss files to sass files
 - **gulp sass2scss** 
   - converts sass files to scss files
-- **gulp sass** 
-  - watch changes made to sass files in the Sass folder. Once a file is edited and saved, it syncs the changes with an scss file and then runs the 'styles' task.
+- **gulp lint** 
+  - checks Sass file primarily for meregable selectors and duplicate properties
+- **gulp clean** 
+  - runs gulp comb, lint, and images
 
 ### Tips for Quick WP-Gulp Installation and Execution (Mac)
 To rapidly install and run WP-Gulp, edit your bash_profile:

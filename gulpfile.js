@@ -41,7 +41,6 @@ gulp.task('clean', ['comb','lint','images']);
 // gulp
 gulp.task('default', ['watch','images']);
 
-
 // gulp watch
 gulp.task('watch', function() {
   plugins.livereload.listen();
