@@ -17,7 +17,7 @@
 - **gulp**
   - watch changes made to SCSS files in the Sass folder. Once a file is edited and saved, it runs the 'styles' task, combs the SCSS file, and injects the new CSS into the browser via LiveReload.
 - **gulp styles**
-  - comb, compile, auto-prefix, and minify SCSS files in the Sass folder into a single CSS file. A source map is added to the CSS file. Errors in Sass code will produce a desktop alert (Mac only).
+  - compile, auto-prefix, and minify SCSS files in the Sass folder into a single CSS file. A source map is added to the CSS file. Errors in Sass code will produce a desktop alert (Mac only).
 - **gulp js**
   - concatenate and minify all non-minified javascript files in the theme's javascript directory
 - **gulp images** 
