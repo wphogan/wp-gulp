@@ -4,24 +4,14 @@
 //
 module.exports = function (gulp, plugins, theme_dir, sass_dir, css_dir) {
     return function () {
-        var onError = function (err) {  
-          console.log(err.toString())
-          this.emit("error", new Error("Something happened: Error message!"))
-          this.emit('end')
-        };
-         function handleError (err) {  
-          console.log(err.toString())
-          this.emit('end')
-        };
+        var onError = require('./error.js').onError;
         return gulp.src(sass_dir + "*.+(scss|sass)")
-          .pipe(plugins.csscomb('./.css_comb_settings.json'))
+          .pipe(plugins.csscomb('./config/csscomb_config.json'))
+          .on("error", plugins.notify.onError({
+              message: "Oh shit, error on line: <%= error.line %> ",
+              title: "Even coding rock-stars make mistakes"
+            }))
           .pipe(gulp.dest(sass_dir))
-          .pipe(plugins.plumber({
-            errorHandler: function (err) {
-              console.log(err);
-              this.emit('end');
-            }
-          }))
           .pipe(plugins.sourcemaps.init())
           .pipe(plugins.sass(function () {
             this.emit("error", new Error("Something happend: Sass crashed!"))}))

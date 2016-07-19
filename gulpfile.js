@@ -1,5 +1,5 @@
 // Theme, Sass, & CSS directories
-var theme_dir   = '../themes/mi_familia_vota',
+var theme_dir   = '../themes/' + 'custom_template',
     sass_dir    = theme_dir + '/sass/sass/',
     css_dir     = theme_dir + '/sass/stylesheets';
 
@@ -26,6 +26,9 @@ gulp.task('styles', getTask('gulp-styles.js'));
 // gulp comb 
 gulp.task('comb', getTask('gulp-comb.js'));
 
+// gulp comb 
+gulp.task('lint', getTask('gulp-lint.js'));
+
 // gulp scss2sass
 gulp.task('scss2sass', getTask('gulp-scss2sass.js'));
 
@@ -41,27 +44,11 @@ gulp.task('watch', function() {
   gulp.watch(sass_dir + "*.+(scss|sass)", ['styles'], {
       //prevent infinite loop caused by csscomb
       ignoreInitial: true,
-      //try this if loop happens
-      //awaitWriteFinish: {
-        //stabilityThreshold: 5000,
-        //pollInterval: 400
-      //},
-
   })
   .on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
   gulp.watch([theme_dir + '/*.php', theme_dir + '/*.js'], function (files){
     plugins.livereload.changed(files)
-  });
-});
-
-// gulp sass
-gulp.task('sass', ['styles','comb','images'], function() {
-  plugins.livereload.listen()
-  gulp.watch(sass_dir + "*.+(sass)", ['sass2scss', 'styles'])
-  // When there is a change, log a message in the console
-  .on('change', function(event) {
-    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
 });
