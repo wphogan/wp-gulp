@@ -43,9 +43,9 @@ rules:
   final-newline:
     - 1
     - include: true
-  force-attribute-nesting: 1
-  force-element-nesting: 1
-  force-pseudo-nesting: 1
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
   function-name-format:
     - 1
     - allow-leading-underscore: true
@@ -88,7 +88,7 @@ rules:
     - 1
     - extra-properties: []
   no-qualifying-elements:
-    - 1
+    - 0
     - allow-element-with-attribute: false
       allow-element-with-class: false
       allow-element-with-id: false
@@ -146,21 +146,21 @@ rules:
         - 1
         - 2
         - 3
-  single-line-per-selector: 1
+  single-line-per-selector: 0
   space-after-bang:
-    - 1
+    - 0
     - include: false
   space-after-colon:
-    - 1
+    - 0
     - include: true
   space-after-comma:
-    - 1
+    - 0
     - include: true
   space-before-bang:
-    - 1
+    - 0
     - include: true
   space-before-brace:
-    - 1
+    - 0
     - include: true
   space-before-colon: 1
   space-between-parens:
