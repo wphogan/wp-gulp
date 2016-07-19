@@ -51,7 +51,7 @@ gulp.task('watch', function() {
   .on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
-  gulp.watch([theme_dir + '/*.php', theme_dir + '/*.js'], function (files){
+  gulp.watch([theme_dir + '/**/*.php', theme_dir + '/**/*.js'], function (files){
     plugins.livereload.changed(files)
   });
 });
