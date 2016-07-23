@@ -1,5 +1,5 @@
 // Theme, Sass, & CSS directories
-var theme_dir   = '../themes/' + 'mi_familia_vota',
+var theme_dir   = '../themes/' + 'banda',
     sass_dir    = theme_dir + '/sass/sass/',
     css_dir     = theme_dir + '/sass/stylesheets';
 
@@ -44,10 +44,7 @@ gulp.task('default', ['watch','images']);
 // gulp watch
 gulp.task('watch', function() {
   plugins.livereload.listen();
-  gulp.watch(sass_dir + "*.+(scss|sass)", ['styles'], {
-      //prevent infinite loop caused by csscomb
-      ignoreInitial: true,
-  })
+  gulp.watch(sass_dir + "*.+(scss|sass)", ['styles'])
   .on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
