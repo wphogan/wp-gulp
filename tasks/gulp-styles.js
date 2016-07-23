@@ -10,7 +10,10 @@ module.exports = function (gulp, plugins, theme_dir, sass_dir, css_dir) {
           .pipe(plugins.sassGlob())
           .pipe(plugins.sass(function () {
             this.emit("error", new Error("Something happend: Sass crashed!"))}))
-            .on("error", plugins.notify.onError())
+            .on("error", plugins.notify.onError({
+              message: "Oh shit, error on line: <%= error.line %> ",
+              title: "Even coding rock-stars make mistakes"
+            }))
           .pipe(plugins.plumber({errorHandler: onError}))
           .pipe(plugins.autoprefixer("last 3 version","safari 5", "ie 8", "ie 9", "ie 10", "ie 11"))
           .pipe(plugins.minifyCss())
