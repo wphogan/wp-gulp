@@ -16,6 +16,7 @@
     "gulp-concat": "",
     "gulp-contains": "",
     "gulp-csscomb": "",
+    "gulp-sass-glob": "",
     "gulp-imagemin": "^2.3.0",
     "gulp-insert": "",
     "gulp-livereload": "^3.8.1",
