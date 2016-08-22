@@ -1,8 +1,7 @@
  // Theme, Sass, & CSS directories
-var theme_dir   = '../themes/' + 'banda-theme',
-    sass_dir    = theme_dir + '/styles/sass/',
-    css_dir     = theme_dir + '/styles/css',
-    git_dir     = '../../' + '.git/**/*';
+var theme_dir   = '../themes/' + 'mi_familia_vota',
+    sass_dir    = theme_dir + '/sass/sass/',
+    css_dir     = theme_dir + '/sass/stylesheets';
 
 // Define Gulp and auto-plugin loader
 var gulp        = require('gulp'),
@@ -40,14 +39,13 @@ gulp.task('sass2scss', getTask('gulp-sass2scss.js'));
 gulp.task('clean', ['comb','lint','images']);
 
 // gulp
-gulp.task('default', ['watch','images']);
+gulp.task('default', ['watch']);
 
 // gulp watch
 gulp.task('watch', function() {
   plugins.livereload.listen();
   gulp.watch(sass_dir + "**/*.+(scss|sass)", ['styles'])
   gulp.watch(sass_dir + "**/*.+(scss|sass)", ['styles'])
-  gulp.watch(git_dir, ['styles'])
   .on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
