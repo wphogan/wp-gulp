@@ -23,8 +23,8 @@ rules:
     - 0
     - max-depth: 1
   border-zero:
-    - 1
-    - convention: zero
+    - 0
+    - convention: 0
   brace-style:
     - 1
     - allow-single-line: true
@@ -41,7 +41,7 @@ rules:
   extends-before-declarations: 1
   extends-before-mixins: 1
   final-newline:
-    - 1
+    - 0
     - include: true
   force-attribute-nesting: 0
   force-element-nesting: 0

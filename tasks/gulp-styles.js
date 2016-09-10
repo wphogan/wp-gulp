@@ -19,7 +19,6 @@ module.exports = function (gulp, plugins, theme_dir, sass_dir, css_dir) {
           .pipe(plugins.minifyCss())
           .pipe(plugins.sourcemaps.write()) // for external file add ('../maps')
           .pipe(gulp.dest(css_dir))
-          .pipe(plugins.livereload())
           .resume();
     };
 };

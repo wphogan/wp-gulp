@@ -1,5 +1,5 @@
  // Theme, Sass, & CSS directories
-var theme_dir   = '../themes/' + 'mi_familia_vota',
+var theme_dir   = '../themes/' + 'custom_template',
     sass_dir    = theme_dir + '/sass/sass/',
     css_dir     = theme_dir + '/sass/stylesheets';
 
@@ -23,10 +23,10 @@ gulp.task('js', getTask('gulp-js.js'));
 // gulp styles
 gulp.task('styles', getTask('gulp-styles.js'));
 
-// gulp comb 
+// gulp comb -- configure settings in /config/sass_lint_config.yml
 gulp.task('comb', getTask('gulp-comb.js'));
 
-// gulp comb 
+// gulp lint -- configure settings in /config/sass_lint_config.yml
 gulp.task('lint', getTask('gulp-lint.js'));
 
 // gulp scss2sass
@@ -44,12 +44,8 @@ gulp.task('default', ['watch']);
 // gulp watch
 gulp.task('watch', function() {
   plugins.livereload.listen();
-  gulp.watch(sass_dir + "**/*.+(scss|sass)", ['styles'])
-  gulp.watch(sass_dir + "**/*.+(scss|sass)", ['styles'])
-  .on('change', function(event) {
-    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-  });
-  gulp.watch([theme_dir + '/**/*.php', theme_dir + '/**/*.js'], function (files){
+  gulp.watch(sass_dir + "**/*.+(scss|sass)", ['styles']);
+  gulp.watch([theme_dir + '/**/*.php', theme_dir + '/**/*.js', theme_dir + '/**/*.css'], function (files){
     plugins.livereload.changed(files)
   });
 });
