@@ -1,7 +1,7 @@
 //
 // Converts Sass files into SCSS files
 //
-module.exports = function (gulp, plugins, theme_dir, sass_dir, css_dir) {
+module.exports = function (gulp, plugins, sass_dir) {
     return function () {
         var vfs = require('vinyl-fs');
         var converter = require('sass-convert');
