@@ -40,8 +40,8 @@ $ open ~/.bash_profile
 ```
 And add the following code to it:
 ```
-alias rungulp='cd wp-content/wp-gulp && gulp' 
-alias newgulp='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && open gulpfile.js && npm install'
+alias gulprun='cd wp-content/wp-gulp && gulp' 
+alias gulpnew='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && open gulpfile.js && npm install'
 ```
 With this bash_profile, entering `newgulp` from the root of a WordPress site will install the wp-gulp folder within the wp-content folder.
 

@@ -38,17 +38,17 @@ gulp.task('lint', getTask('gulp-lint.js'));
 // gulp compass -- for sites using compass libraries
 gulp.task('compass', getTask('gulp-compass.js'));
 
-// gulp scss2sass
-gulp.task('scss2sass', getTask('gulp-scss2sass.js'));
-
-// gulp sass2scss
-gulp.task('sass2scss', getTask('gulp-sass2scss.js'));
-
 // gulp clean
 gulp.task('clean', ['comb','lint','images']);
 
 // gulp
 gulp.task('default', ['watch']);
+
+// gulp scss2sass
+//gulp.task('scss2sass', getTask('gulp-scss2sass.js'));
+
+// gulp sass2scss
+//gulp.task('sass2scss', getTask('gulp-sass2scss.js'));
 
 // gulp watch
 gulp.task('watch', function() {

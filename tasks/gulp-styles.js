@@ -17,7 +17,7 @@ module.exports = function (gulp, plugins, sass_dir, css_dir) {
           .pipe(plugins.plumber({errorHandler: onError}))
           .pipe(plugins.autoprefixer("last 3 version","safari 5", "ie 8", "ie 9", "ie 10", "ie 11"))
           .pipe(plugins.minifyCss())
-          .pipe(plugins.sourcemaps.write()) // for external file add ('../maps')
+          .pipe(plugins.sourcemaps.write('.')) // for external file add ('../maps')
           .pipe(gulp.dest(css_dir))
           .resume();
     };
