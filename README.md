@@ -15,23 +15,19 @@
 
 ### Gulp Tasks:
 - **gulp**
-  - watch changes made to SCSS files in the Sass folder. Once a file is edited and saved, it runs the 'styles' task, combs the SCSS file, and injects the new CSS into the browser via LiveReload.
+  - This is the deafult task. When an SCSS file is edited and saved, the 'styles' task (see below) will run and the browser will reload. Edits to other file types will reload the browser via LiveReload.
 - **gulp styles**
-  - compile, auto-prefix, and minify SCSS files in the Sass folder into a single CSS file. A source map is added to the CSS file. Errors in Sass code will produce a desktop alert (Mac only).
+  - compile, auto-prefix, and minify SCSS files in the Sass folder into a single CSS file. A source map is added to directory of the CSS file. Errors in SCSS code will produce a desktop alert (Mac only).
 - **gulp js**
-  - concatenate and minify all non-minified javascript files in the theme's javascript directory
+  - concatenate and minify all non-minified javascript files in the theme's javascript directory. Newly minified files are suffixed with '.min.js'.
 - **gulp images** 
-  - optimize any images in the theme's image folder
-- **gulp scss2sass** 
-  - converts scss files to sass files
-- **gulp sass2scss** 
-  - converts sass files to scss files
+  - optimize any images in the theme's images folder
 - **gulp comb** 
-  - 'combs' Sass file -- organizes properties, adds and removes spaces and tabs as necessary, etc. For full configuration list, see 'config/csscomb_config.json'
+  - 'combs' SCSS file -- organizes properties, adds and removes spaces and tabs as necessary, etc. For full configuration list, see 'config/csscomb_config.json'
 - **gulp lint** 
-  - checks Sass file primarily for mergeable selectors and duplicate properties. For full configuration list, see 'config/sass_lint_config.yml'
+  - checks SCSS file primarily for mergeable selectors and duplicate properties. For full configuration list, see 'config/sass_lint_config.yml'
 - **gulp clean** 
-  - runs gulp comb, lint, and images
+  - runs gulp 'comb', 'lint', and 'images'
 
 ### Tips for Quick WP-Gulp Installation and Execution (Mac)
 To rapidly install and run WP-Gulp, edit your bash_profile:
