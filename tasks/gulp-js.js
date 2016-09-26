@@ -1,12 +1,12 @@
 //
 // Concatenate & Minify non-min JS files
 //
-module.exports = function (gulp, plugins, theme_dir) {
+module.exports = function (gulp, plugins, config) {
     return function () {
-       return gulp.src([theme_dir + '/js/*.js', '!' + theme_dir + '/js/*min.js'])
+       return gulp.src([config.source.scripts.js_directory + '/*.js', '!' + config.source.scripts.js_directory + '/*min.js'])
            .pipe(plugins.concat('main.js'))
            .pipe(plugins.rename({suffix: '.min'}))
            .pipe(plugins.uglify())
-           .pipe(gulp.dest(theme_dir + '/js'));
+           .pipe(gulp.dest(config.source.scripts.js_directory ));
     };
 };

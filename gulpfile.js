@@ -2,10 +2,22 @@
 // Configuration
 //
 
-// Theme, Sass, & CSS directories
-var theme_dir   = '../themes/' + 'custom_template/',
-    sass_dir    = theme_dir + '/sass/sass/',
-    css_dir     = theme_dir + '/sass/stylesheets/';
+var theme_directory   = '../themes/' + 'custom_template/';
+
+// Theme, Sass, & CSS directories// configuration
+var config = {
+	source: {
+		scripts: {
+			js_directory: theme_directory + '/js/'
+		},
+		styles: {
+			sass_directory: theme_directory + '/sass/sass/'
+		},
+		image_directory: theme_directory + '/images/'
+	},
+	destination: theme_directory + '/sass/stylesheets/'
+};
+
 
 // Define Gulp and auto-plugin loader
 var gulp        = require('gulp'),
@@ -13,8 +25,10 @@ var gulp        = require('gulp'),
 
 // Returns task.js file
 function getTask(task) {
-    return require('./tasks/' + task)(gulp, plugins, theme_dir, sass_dir, css_dir);
+    return require('./tasks/' + task)(gulp, plugins, config);
 }
+
+
 
 //
 // Gulp tasks:
@@ -53,7 +67,7 @@ gulp.task('default', ['watch']);
 // gulp watch
 gulp.task('watch', function() {
   plugins.livereload.listen();
-  gulp.watch(sass_dir + "/**/*.+(scss|sass)", ['styles']);
+  gulp.watch(config.source.styles.sass_directory + "/**/*.+(scss|sass)", ['styles']);
   gulp.watch([theme_dir + '/**/*.php', theme_dir + '/**/*.js', theme_dir + '/**/*.css'], function (files){
     plugins.livereload.changed(files)
   });

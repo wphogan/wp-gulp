@@ -1,10 +1,10 @@
 //
 // Combs SCSS file
 //
-module.exports = function (gulp, plugins, sass_dir) {
+module.exports = function (gulp, plugins, config) {
     return function () {
-        return gulp.src(sass_dir + "/*.scss")
+        return gulp.src(config.source.styles.sass_directory + "/*.scss")
           .pipe(plugins.csscomb('./config/csscomb_config.json'))
-          .pipe(gulp.dest(sass_dir));
+          .pipe(gulp.dest(config.source.styles.sass_directory));
     };
 };
