@@ -31,7 +31,5 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.1",
     "require-dir": "",
-    //"sass-convert": "", -- turn on for scss2sass
-    //"vinyl-fs": ""  -- turn on for scss2sass
   }
 }
