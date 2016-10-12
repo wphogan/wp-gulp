@@ -15,7 +15,7 @@ var config = {
 		},
 		image_directory: theme_directory + '/images/'
 	},
-	destination: theme_directory + '/sass/stylesheets/'
+	destination: theme_directory + '/sass/stylesheets/',
 };
 
 
