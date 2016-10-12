@@ -3,8 +3,8 @@
 // 
 module.exports = function (gulp, plugins, config) {
     return function () {
-        return gulp.src(config.source.styles.image_directory +'/**/*')
+        return gulp.src(config.source.image_directory +'/**/*')
           .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-          .pipe(gulp.dest(config.image_directory));
+          .pipe(gulp.dest(config.source.image_directory));
     };
 };
