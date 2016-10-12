@@ -68,7 +68,7 @@ gulp.task('default', ['watch']);
 gulp.task('watch', function() {
   plugins.livereload.listen();
   gulp.watch(config.source.styles.sass_directory + "/**/*.+(scss|sass)", ['styles']);
-  gulp.watch([theme_dir + '/**/*.php', theme_dir + '/**/*.js', theme_dir + '/**/*.css'], function (files){
+  gulp.watch([theme_directory + '/**/*.php', theme_directory + '/**/*.js', theme_directory + '/**/*.css'], function (files){
     plugins.livereload.changed(files)
   });
 });
