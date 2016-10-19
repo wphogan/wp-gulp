@@ -39,6 +39,6 @@ And add the following code to it:
 alias gulprun='cd wp-content/wp-gulp && gulp' 
 alias gulpnew='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && open gulpfile.js && npm install'
 ```
-With this bash_profile, entering `newgulp` from the root of a WordPress site will install the wp-gulp folder within the wp-content folder.
+With this bash_profile, entering `gulpnew` from the root of a WordPress site will install the wp-gulp folder within the wp-content folder.
 
-After gulp is installed, entering `rungulp` from the site's root will run the default gulp task 'gulp'.
+After gulp is installed, entering `gulprun` from the site's root will run the default gulp task 'gulp'.

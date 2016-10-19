@@ -5,7 +5,7 @@
 module.exports = function (gulp, plugins, config) {
     return function () {
         var onError = require('./error.js').onError;
-        return gulp.src(config.source.styles.sass_directory  + "*.+(scss|sass)")
+        return gulp.src(config.source.styles.sass_dir  + "*.+(scss|sass)")
           .pipe(plugins.sourcemaps.init())
           .pipe(plugins.sassGlob())
           .pipe(plugins.sass(function () {

@@ -1,11 +1,12 @@
 {
   "name": "wp-gulp",
-  "version": "1.0.0",
-  "description": "Gulp file configuration for WordPress themes",
+  "version": "0.1.0",
+  "description": "Gulp configuration for WordPress themes",
   "sasslintConfig": "./config/sass_lint_config.yml",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall" : "./install.js"
   },
   "author": "Bill Hogan",
   "license": "ISC",
@@ -32,17 +33,16 @@
     "gulp-uglify": "",
     "require-dir": ""
   },
-  "dependencies": {},
+  "dependencies": {
+    "prompt": "",
+    "fs": ""
+    },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wphogan/wp-gulp.git"
   },
   "keywords": [
-    "gulp",
-    "wordpress"
+
   ],
   "bugs": {
-    "url": "https://github.com/wphogan/wp-gulp/issues"
-  },
-  "homepage": "https://github.com/wphogan/wp-gulp#readme"
+
+  }
 }
