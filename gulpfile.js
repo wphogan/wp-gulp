@@ -52,7 +52,7 @@ gulp.task('default', ['watch']);
 gulp.task('watch', function() {
   plugins.livereload.listen();
   gulp.watch(config.source.styles.sass_dir + "/**/*.+(scss|sass)", ['styles']);
-  gulp.watch([config.source.theme_dri + '/**/*.+(php|js|css)'], function (files){
+  gulp.watch([config.source.theme_dir + '/**/*.+(php|js|css)'], function (files){
     plugins.livereload.changed(files)
   });
 });
