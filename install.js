@@ -20,12 +20,12 @@ var default_config = {
     source: {
       theme_dir: "theme_directory",
       scripts: {
-        js_directory: "theme_directory + '/js/'"
+        js_dir: "theme_directory + '/js/'"
       },
       styles: {
-        sass_directory: "theme_directory + '/sass/sass/'"
+        sass_dir: "theme_directory + '/sass/sass/'"
       },
-      image_directory: "theme_directory + '/images/'"
+      image_dir: "theme_directory + '/images/'"
     },
     destination: "theme_directory + '/sass/stylesheets/'",
   }
@@ -40,23 +40,23 @@ var properties = [
     message: 'Theme Name (defaults to "custom_template")',
     validator: /^[a-zA-Z\s\-]+$/,
     warning: 'Theme name must be only letters, spaces, or dashes'
-  },
-  {
-    name: 'javascript_directory',
-    message: 'JavaScript Directory (defaults to "/js")'
-  },
-  {
-    name: 'sass_directory',
-    message: 'Sass directory (defaults to "/sass/sass")'
-  },
-  {
-    name: 'image_directory',
-    message: 'Image directory (defaults to "/images")'
-  },
-  {
-    name: 'css_directory',
-    message: 'Css directory (defaults to "/sass/stylesheets")'
   }
+  // {
+  //   name: 'javascript_directory',
+  //   message: 'JavaScript Directory (defaults to "/js")'
+  // },
+  // {
+  //   name: 'sass_directory',
+  //   message: 'Sass directory (defaults to "/sass/sass")'
+  // },
+  // {
+  //   name: 'image_directory',
+  //   message: 'Image directory (defaults to "/images")'
+  // },
+  // {
+  //   name: 'css_directory',
+  //   message: 'Css directory (defaults to "/sass/stylesheets")'
+  // }
 ];
 
 //
@@ -68,10 +68,10 @@ prompt.get(properties, function (err, result) {
   if (err) { return onErr(err); }
   console.log('New Gulpfile Configuration:');
   console.log('  Theme name: ' + result.theme_name);
-  console.log('  JavaScript directory: ' + result.javascript_directory);
-  console.log('  Sass directory: ' + result.sass_directory);
-  console.log('  Image directory: ' + result.image_directory);
-  console.log('  CSS directory: ' + result.css_directory);
+  // console.log('  JavaScript directory: ' + result.javascript_directory);
+  // console.log('  Sass directory: ' + result.sass_directory);
+  // console.log('  Image directory: ' + result.image_directory);
+  // console.log('  CSS directory: ' + result.css_directory);
 
   //write new config file
   write_new_config_file(result);
@@ -98,7 +98,7 @@ var write_new_config_file = function(properties) {
   } else {
     wstream.write("var theme_directory   = '" + theme_directory + "';");
   }
-  wstream.write("\n\nmodule.exports = {\nconfig: {\n\tsource: {\n\t\ttheme_dir: theme_directory,\n\t\tscripts: {\n\t\t\tjs_directory: ");
+  wstream.write("\n\nmodule.exports = {\nconfig: {\n\tsource: {\n\t\ttheme_dir: theme_directory,\n\t\tscripts: {\n\t\t\tjs_dir: ");
 
   // set custom js dir
   if (properties.javascript_directory) {
@@ -107,7 +107,7 @@ var write_new_config_file = function(properties) {
      wstream.write(default_config.config.source.scripts.js_directory);
   }
 
-  wstream.write("\n\t\t},\n\t\tstyles: {\n\t\t\tsass_directory: ");
+  wstream.write("\n\t\t},\n\t\tstyles: {\n\t\t\tsass_dir: ");
 
   // set custom sass dir
   if (properties.sass_directory) {
@@ -116,7 +116,7 @@ var write_new_config_file = function(properties) {
      wstream.write(default_config.config.source.styles.sass_directory);
   }
 
-  wstream.write("\n\t\t},\n\t\timage_directory: ");
+  wstream.write("\n\t\t},\n\t\timage_dir: ");
 
   //set custom img dir
   if (properties.image_directory) {
