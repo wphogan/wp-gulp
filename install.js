@@ -101,15 +101,15 @@ var write_new_config_file = function(properties) {
   wstream.write("\n\nmodule.exports = {\nconfig: {\n\tsource: {\n\t\ttheme_dir: theme_directory,\n\t\tscripts: {\n\t\t\tjs_dir: ");
 
   // set custom js dir
-  wstream.write(default_config.config.source.scripts.js_directory);
+  wstream.write(default_config.config.source.scripts.js_dir);
   wstream.write("\n\t\t},\n\t\tstyles: {\n\t\t\tsass_dir: ");
 
   // set custom sass dir
-  wstream.write(default_config.config.source.styles.sass_directory);
+  wstream.write(default_config.config.source.styles.sass_dir);
   wstream.write("\n\t\t},\n\t\timage_dir: ");
 
   //set custom img dir
-  wstream.write(default_config.config.source.image_directory);
+  wstream.write(default_config.config.source.image_dir);
   wstream.write("\n\t\t},\n\tdestination: ");
 
   // set custom css destination dir
