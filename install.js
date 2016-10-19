@@ -101,39 +101,19 @@ var write_new_config_file = function(properties) {
   wstream.write("\n\nmodule.exports = {\nconfig: {\n\tsource: {\n\t\ttheme_dir: theme_directory,\n\t\tscripts: {\n\t\t\tjs_dir: ");
 
   // set custom js dir
-  if (properties.javascript_directory) {
-     wstream.write("theme_directory + '/" + properties.javascript_directory + "/'");
-  } else {
-     wstream.write(default_config.config.source.scripts.js_directory);
-  }
-
+  wstream.write(default_config.config.source.scripts.js_directory);
   wstream.write("\n\t\t},\n\t\tstyles: {\n\t\t\tsass_dir: ");
 
   // set custom sass dir
-  if (properties.sass_directory) {
-    wstream.write("theme_directory + '/" + properties.sass_directory + "/'");
-  } else {
-     wstream.write(default_config.config.source.styles.sass_directory);
-  }
-
+  wstream.write(default_config.config.source.styles.sass_directory);
   wstream.write("\n\t\t},\n\t\timage_dir: ");
 
   //set custom img dir
-  if (properties.image_directory) {
-    wstream.write("theme_directory + '/" + properties.image_directory + "/'");
-  } else {
-     wstream.write(default_config.config.source.image_directory);
-  }
-
+  wstream.write(default_config.config.source.image_directory);
   wstream.write("\n\t\t},\n\tdestination: ");
 
   // set custom css destination dir
-  if (properties.css_directory) {
-    wstream.write("theme_directory + '/" + properties.css_directory + "/'");
-  } else {
-     wstream.write(default_config.config.destination);
-  }
-
+  wstream.write(default_config.config.destination);
   wstream.write("\n\t}\n};");
 
   wstream.end();
