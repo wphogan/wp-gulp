@@ -38,8 +38,7 @@ var properties = [
   {
     name: 'theme_name',
     message: 'Theme Name (defaults to "custom_template")',
-    validator: /^[a-zA-Z\s\-]+$/,
-    warning: 'Theme name must be only letters, spaces, or dashes'
+    
   }
   // {
   //   name: 'javascript_directory',
