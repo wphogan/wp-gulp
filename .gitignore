@@ -1,13 +1,6 @@
 # exclude node modules
 .DS_Store
-node_modules/
-!node_modules/gulp-concat
-!node_modules/gulp-contains
-!node_modules/gulp-insert
-!node_modules/gulp-rename
-!node_modules/gulp-sass-glob
-!node_modules/prompt
-!node_modules/require-dir
+#node_modules/
 
 
 
