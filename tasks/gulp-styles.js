@@ -11,7 +11,7 @@ module.exports = function (gulp, plugins, config) {
           .pipe(plugins.sass(function () {
             this.emit("error", new Error("Something happend: Sass crashed!"))}))
             .on("error", plugins.notify.onError({
-              message: "Oh shit, error on line: <%= error.line %> ",
+              message: "Oh shit, error:\nLINE: <%= error.line %> \nFILE: <%= error.file %> ",
               title: "Even coding rock-stars make mistakes"
             }))
           .pipe(plugins.plumber({errorHandler: onError}))

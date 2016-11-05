@@ -46,7 +46,7 @@ gulp.task('compass', getTask('gulp-compass.js'));
 gulp.task('clean', ['comb','lint','images']);
 
 // gulp -- set default task to 'watch'
-gulp.task('default', ['watch']);
+gulp.task('default', ['styles', 'watch']);
 
 // gulp watch
 gulp.task('watch', function() {
