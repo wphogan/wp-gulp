@@ -3,7 +3,7 @@
 // This file is written using user inputs by install.js. Edit it as needed.
 //
 
-var theme_directory   = '../themes/' + 'align/';
+var theme_directory   = '../themes/' + 'custom_theme/';
 
 module.exports = {
 config: {
