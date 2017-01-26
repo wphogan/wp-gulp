@@ -3,7 +3,7 @@
 *Requires Node Package Manager and Gulp.* Instructions for installing NPM on [Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows), [Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac), and [Linux](http://blog.teamtreehouse.com/install-node-js-npm-linux). Instructions for installing [Gulp](https://coolestguidesontheplanet.com/installing-gulp-on-osx-10-11-el-capitan/).
 
 ### Installation
-1. Copy wp-gulp to the 'wp-content' folder: `git clone git@github.com:wphogan/wp-gulp.git`
+1. Copy wp-gulp to the 'wp-content' folder: `git clone https://github.com/wphogan/wp-gulp.git`
 2. From the new 'wp-gulp' directory, run `npm install`.
 3. From the 'wp-gulp' directory, run `gulp`.
 4. The `gulp` command is configured with LiveReload. It automatically injects CSS edits into the browser. Add and activate LiveReload to [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/livereload/).
