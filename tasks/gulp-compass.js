@@ -3,7 +3,7 @@
 // 
 module.exports = function (gulp, plugins, config) {
     return function () {
-        return  gulp.src(config.source.styles.sass_dir + '/*.scss')
+        return  gulp.src(config.source.styles.sass_dir + '/**/*.scss')
           .pipe(plugins.plumber({
             errorHandler: function (error) {
               console.log(error.message);
