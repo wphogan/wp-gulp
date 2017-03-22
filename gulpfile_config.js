@@ -13,10 +13,10 @@ config: {
 			js_dir: theme_directory + '/js/'
 		},
 		styles: {
-			sass_dir: theme_directory + '/sass/sass/'
+			sass_dir: theme_directory + '/styles/sass/'
 		},
 		image_dir: theme_directory + '/images/'
 		},
-	destination: theme_directory + '/sass/stylesheets/'
+	destination: theme_directory + '/styles/stylesheets/'
 	}
 };
