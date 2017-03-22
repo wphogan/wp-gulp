@@ -3,7 +3,7 @@
 // This file is written using user inputs by install.js. Edit it as needed.
 //
 
-var theme_directory   = '../themes/' + 'custom_theme/';
+var theme_directory   = '../themes/custom_template/';
 
 module.exports = {
 config: {
@@ -13,10 +13,10 @@ config: {
 			js_dir: theme_directory + '/js/'
 		},
 		styles: {
-			sass_dir: theme_directory + '/styles/sass/'
+			sass_dir: theme_directory + '/sass/sass/'
 		},
 		image_dir: theme_directory + '/images/'
 		},
-	destination: theme_directory + '/styles/css/'
+	destination: theme_directory + '/sass/stylesheets/'
 	}
 };
