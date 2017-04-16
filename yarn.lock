@@ -185,7 +185,7 @@ aws4@^1.2.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-balanced-match@^0.4.1:
+balanced-match@^0.4.1, balanced-match@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.4.2.tgz#cb3f3e3c732dc0f01ee70b403f302e61d7709838"
 
@@ -295,7 +295,7 @@ braces@^1.8.2:
     preserve "^0.2.0"
     repeat-element "^1.1.2"
 
-browserslist@^1.7.6:
+browserslist@^1.0.0, browserslist@^1.7.6:
   version "1.7.7"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-1.7.7.tgz#0bd76704258be829b2398bb50e4b62d1a166b0b9"
   dependencies:
@@ -1718,6 +1718,17 @@ gulp-notify@:
     node.extend "^1.1.6"
     through2 "^2.0.3"
 
+gulp-pixrem@:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-pixrem/-/gulp-pixrem-1.0.0.tgz#6f4a75b4fb53381586261e3391fcb0cc0ae32dc2"
+  dependencies:
+    gulp-util "~3.0.6"
+    object-assign "^4.0.1"
+    pixrem "~3.0.0"
+    postcss "^5.0.8"
+    through2 "~2.0.0"
+    vinyl-sourcemaps-apply "^0.1.4"
+
 gulp-plumber@:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/gulp-plumber/-/gulp-plumber-1.1.0.tgz#f12176c2d0422f60306c242fff6a01a394faba09"
@@ -1794,7 +1805,7 @@ gulp-uglify@:
     uglify-save-license "^0.4.1"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-util@^3, gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.2, gulp-util@^3.0.3, gulp-util@^3.0.4, gulp-util@^3.0.6, gulp-util@^3.0.7, gulp-util@^3.0.8:
+gulp-util@^3, gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.2, gulp-util@^3.0.3, gulp-util@^3.0.4, gulp-util@^3.0.6, gulp-util@^3.0.7, gulp-util@^3.0.8, gulp-util@~3.0.6:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -2682,6 +2693,10 @@ map-stream@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
 
+math-expression-evaluator@^1.2.14:
+  version "1.2.16"
+  resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.16.tgz#b357fa1ca9faefb8e48d10c14ef2bcb2d9f0a7c9"
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -2750,7 +2765,7 @@ mini-lr@^0.1.8:
     parseurl "~1.3.0"
     qs "~2.2.3"
 
-minimatch@0.2.12:
+minimatch@0.2.12, minimatch@~0.2.11:
   version "0.2.12"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-0.2.12.tgz#ea82a012ac662c7ddfaa144f1c147e6946f5dafb"
   dependencies:
@@ -2768,13 +2783,6 @@ minimatch@^2.0.1:
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-2.0.10.tgz#8d087c39c6b38c001b97fca7ce6d0e1e80afbac7"
   dependencies:
     brace-expansion "^1.0.0"
-
-minimatch@~0.2.11:
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-0.2.14.tgz#c74e780574f63c6f9a090e90efbe6ef53a6a756a"
-  dependencies:
-    lru-cache "2"
-    sigmund "~1.0.0"
 
 minimist@0.0.8:
   version "0.0.8"
@@ -3163,6 +3171,14 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
+pixrem@~3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/pixrem/-/pixrem-3.0.2.tgz#30d1bafb4c3bdce8e9bb4bd56a13985619320c34"
+  dependencies:
+    browserslist "^1.0.0"
+    postcss "^5.0.0"
+    reduce-css-calc "^1.2.7"
+
 pkginfo@0.3.x:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/pkginfo/-/pkginfo-0.3.1.tgz#5b29f6a81f70717142e09e765bbeab97b4f81e21"
@@ -3185,7 +3201,7 @@ postcss-value-parser@^3.2.3:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@^5.0.4, postcss@^5.2.16:
+postcss@^5.0.0, postcss@^5.0.4, postcss@^5.0.8, postcss@^5.2.16:
   version "5.2.16"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.16.tgz#732b3100000f9ff8379a48a53839ed097376ad57"
   dependencies:
@@ -3363,6 +3379,20 @@ redent@^1.0.0:
   dependencies:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
+
+reduce-css-calc@^1.2.7:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/reduce-css-calc/-/reduce-css-calc-1.3.0.tgz#747c914e049614a4c9cfbba629871ad1d2927716"
+  dependencies:
+    balanced-match "^0.4.2"
+    math-expression-evaluator "^1.2.14"
+    reduce-function-call "^1.0.1"
+
+reduce-function-call@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
+  dependencies:
+    balanced-match "^0.4.2"
 
 regex-cache@^0.4.2:
   version "0.4.3"
@@ -3614,7 +3644,7 @@ source-map@0.5.x, source-map@0.X, source-map@^0.5.1, source-map@^0.5.3, source-m
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
-source-map@^0.1.38:
+source-map@^0.1.38, source-map@^0.1.39:
   version "0.1.43"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
   dependencies:
@@ -4145,6 +4175,12 @@ vinyl-fs@^2.2.0:
     through2-filter "^2.0.0"
     vali-date "^1.0.0"
     vinyl "^1.0.0"
+
+vinyl-sourcemaps-apply@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/vinyl-sourcemaps-apply/-/vinyl-sourcemaps-apply-0.1.4.tgz#c5fcbd43e2f238423c2dc98bddd6f79b72bc345b"
+  dependencies:
+    source-map "^0.1.39"
 
 vinyl-sourcemaps-apply@^0.2.0, vinyl-sourcemaps-apply@^0.2.1:
   version "0.2.1"

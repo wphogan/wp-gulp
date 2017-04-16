@@ -1,44 +1,56 @@
-# wp-gulp 
-##### A simple gulpfile for WordPress theme development
-*Requires Node Package Manager and Gulp.* Instructions for installing NPM on [Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows), [Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac), and [Linux](http://blog.teamtreehouse.com/install-node-js-npm-linux). Instructions for installing [Gulp](https://coolestguidesontheplanet.com/installing-gulp-on-osx-10-11-el-capitan/).
+# WP-Gulp 
+## A simple gulpfile for WordPress theme development
 
-### Installation
-1. Copy wp-gulp to the 'wp-content' folder: `git clone https://github.com/wphogan/wp-gulp.git`
-2. From the new 'wp-gulp' directory, run `npm install`.
-3. From the 'wp-gulp' directory, run `gulp`.
-4. The `gulp` command is configured with LiveReload. It automatically injects CSS edits into the browser. Add and activate LiveReload to [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/livereload/).
+### Install Dependancies -- Node JS, NPM, Gulp, Yarn, and LiveReload
 
-### Setup
-1. Once installed, open 'gulpfile.js' and replace 'custom_theme' with the name of the theme.
-2. Make sure the Sass and CSS directories listed in gulpfile.js are accurate.
+1. [Install Node JS](https://nodejs.org/en/download/). To see if Node is already installed, run `node -v` from the command line. NOTE: if your version of Node is less than 5.0, you'll need to update it. 
+2. Install Node Package Manager (NPM). Follow these instructions for [Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows), [Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac), or [Linux](http://blog.teamtreehouse.com/install-node-js-npm-linux). 
+3. Globally install gulp: `npm install gulp -g`
+4. Globally install yarn: `npm install yarn -g`
+5. Add and activate LiveReload -- [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/livereload/).
 
+### WP-Gulp Installation
 
-### Gulp Tasks:
-- **gulp**
-  - This is the deafult task. When an SCSS file is edited and saved, the 'styles' task (see below) will run and the browser will reload. Edits to other file types will reload the browser via LiveReload.
-- **gulp styles**
+1. From the 'wp-content' directory of your WordPress site, run the following command: `git clone https://github.com/wphogan/wp-gulp.git`
+2. Enter the new 'wp-gulp' directory and run `yarn install`.
+3. Once installed, open `gulpfile_config.js` and replace `custom_theme` with the name of your theme.
+4. Make sure the SCSS, CSS, and JS directories listed in `gulpfile_config.js` reflect your theme's folder structure.
+
+###  WP-Gulp Tasks
+
+#### Default Gulp task: `gulp`
+
+From the 'wp-gulp' directory, run `gulp`. This task will watch for file changes. If a SCSS file is edited, it runs the `gulp styles` task (see below) and reloads the changes in the browser via LiveReload.  
+
+#### Other Gulp tasks:
+
+- `gulp styles`
   - compile, auto-prefix, and minify SCSS files in the Sass folder into a single CSS file. A source map is added to directory of the CSS file. Errors in SCSS code will produce a desktop alert (Mac only).
-- **gulp js**
-  - concatenate and minify all non-minified javascript files in the theme's javascript directory. Newly minified files are suffixed with '.min.js'.
-- **gulp images** 
+- `gulp js`
+  - concatenate and minify all non-minified javascript files in the theme's javascript directory. Newly minified files are suffixed with `.min.js`.
+- `gulp images`
   - optimize any images in the theme's images folder
-- **gulp comb** 
-  - 'combs' SCSS file -- organizes properties, adds and removes spaces and tabs as necessary, etc. For full configuration list, see 'config/csscomb_config.json'
-- **gulp lint** 
-  - checks SCSS file primarily for mergeable selectors and duplicate properties. For full configuration list, see 'config/sass_lint_config.yml'
-- **gulp clean** 
-  - runs gulp 'comb', 'lint', and 'images'
+- `gulp comb`
+  - "combs" the SCSS file -- organizes properties, adds and removes spaces and tabs as necessary, etc. For full configuration list, see `config/csscomb_config.json` in the `wp-gulp` directory.
+- `gulp lint`
+  - checks SCSS file primarily for mergeable selectors and duplicate properties. For full configuration list, see `config/sass_lint_config.yml` in the `wp-gulp` directory.
+- `gulp clean`
+  - sequentially runs `gulp comb`, `gulp lint`, and `gulp images`
+
 
 ### Tips for Quick WP-Gulp Installation and Execution (Mac)
-To rapidly install and run WP-Gulp, edit your bash_profile:
-```sh
-$ open ~/.bash_profile
-```
+This will save you time installing and running WP-Gulp. It allows you to run the installation with a single command from the site's root directory. It also allows you to run the default gulp task from the root directory.
+
+Edit your `bash_profile`:
+
+    open ~/.bash_profile
+    
 And add the following code to it:
+
 ```
 alias gulprun='cd wp-content/wp-gulp && gulp' 
-alias gulpnew='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && open gulpfile_config.js && npm install'
+alias gulpnew='cd wp-content/ && git clone https://github.com/wphogan/wp-gulp && cd wp-gulp && open gulpfile_config.js && yarn install'
 ```
-With this bash_profile, entering `gulpnew` from the root of a WordPress site will install the wp-gulp folder within the wp-content folder.
+Close and reopen the terminal window. With this new bash_profile, entering `gulpnew` from the root of a WordPress site will install WP-Gulp within the wp-content folder.
 
-After gulp is installed, entering `gulprun` from the site's root will run the default gulp task 'gulp'.
+It'll also allow you to run the default gulp task 'gulp' from the site's root by entering `gulprun`.
