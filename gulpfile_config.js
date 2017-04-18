@@ -17,6 +17,6 @@ config: {
 		},
 		image_dir: theme_directory + '/images/'
 		},
-	destination: theme_directory + '/styles/stylesheets/'
+	destination: theme_directory + '/styles/css/'
 	}
 };

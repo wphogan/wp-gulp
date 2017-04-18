@@ -24,6 +24,8 @@ function getTask(task) {
 // Gulp tasks:
 //
 
+
+
 // gulp images
 gulp.task('images', getTask('gulp-images.js'));
 
@@ -55,4 +57,12 @@ gulp.task('watch', function() {
   gulp.watch([config.source.theme_dir + '/**/*.+(php|js|css|scss|sass)'], function (files){
     plugins.livereload.changed(files)
   });
+});
+
+
+gulp.task('css', function() {
+  gulp.src('css/style.css')
+  gulp.src(config.destination  + "/**/*.+(css)")
+    .pipe(plugins.pixrem())
+    .pipe(gulp.dest(config.destination  +'/public/css/'));
 });
