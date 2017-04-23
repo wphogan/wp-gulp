@@ -29,9 +29,12 @@
     "gulp-rename": "",
     "gulp-sass": "",
     "gulp-sass-lint": "",
+    "gulp-shell": "",
     "gulp-sourcemaps": "",
     "gulp-uglify": "",
-    "require-dir": ""
+    "require-dir": "",
+    "pa11y": ""
+
   },
   "dependencies": {
     "prompt": "",

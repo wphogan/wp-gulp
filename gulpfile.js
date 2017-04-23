@@ -50,6 +50,9 @@ gulp.task('clean', ['comb','lint','images']);
 // gulp pxtorem
 gulp.task('pxtorem', getTask('gulp-pxtorem.js'));
 
+// pa11y accessibility audit
+gulp.task('audit', plugins.shell.task("pa11y localhost"));
+
 // gulp -- set default task to 'watch'
 gulp.task('default', ['styles', 'watch']);
 
