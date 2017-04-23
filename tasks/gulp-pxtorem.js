@@ -1,5 +1,5 @@
 //
-// Main function: Gulp PxToRem
+// Gulp PxToRem
 // Convert pixels to rems 
 //
 module.exports = function (gulp, plugins, config) {

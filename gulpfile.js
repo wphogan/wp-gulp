@@ -50,8 +50,12 @@ gulp.task('clean', ['comb','lint','images']);
 // gulp pxtorem
 gulp.task('pxtorem', getTask('gulp-pxtorem.js'));
 
-// pa11y accessibility audit
-gulp.task('audit', plugins.shell.task("pa11y localhost"));
+// gulp uncss
+gulp.task('uncss', getTask('gulp-uncss.js'));
+
+// gulp audit
+gulp.task('audit', plugins.shell.task('pa11y localhost'));
+
 
 // gulp -- set default task to 'watch'
 gulp.task('default', ['styles', 'watch']);
@@ -59,7 +63,7 @@ gulp.task('default', ['styles', 'watch']);
 // gulp watch
 gulp.task('watch', function() {
   plugins.livereload.listen();
-  gulp.watch(config.source.styles.sass_dir + "/**/*.+(scss|sass)", ['styles']);
+  gulp.watch(config.source.styles.sass_dir + '/**/*.+(scss|sass)', ['styles']);
   gulp.watch([config.source.theme_dir + '/**/*.+(php|js|css|scss|sass)'], function (files){
     plugins.livereload.changed(files)
   });
@@ -68,7 +72,7 @@ gulp.task('watch', function() {
 
 gulp.task('css', function() {
   gulp.src('css/style.css')
-  gulp.src(config.destination  + "/**/*.+(css)")
+  gulp.src(config.destination  + '/**/*.+(css)')
     .pipe(plugins.pixrem())
     .pipe(gulp.dest(config.destination  +'/public/css/'));
 });

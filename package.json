@@ -32,9 +32,9 @@
     "gulp-shell": "",
     "gulp-sourcemaps": "",
     "gulp-uglify": "",
+    "gulp-uncss": "",
     "require-dir": "",
     "pa11y": ""
-
   },
   "dependencies": {
     "prompt": "",
