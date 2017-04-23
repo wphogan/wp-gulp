@@ -48,10 +48,10 @@ gulp.task('compass', getTask('gulp-compass.js'));
 gulp.task('clean', ['comb','lint','images']);
 
 // gulp pxtorem
-gulp.task('pxtorem', ['comb','lint','images']);
+gulp.task('pxtorem', getTask('gulp-pxtorem.js'));
 
 // gulp -- set default task to 'watch'
-gulp.task('default', getTask('gulp-pxtorem.js'));
+gulp.task('default', ['styles', 'watch']);
 
 // gulp watch
 gulp.task('watch', function() {
