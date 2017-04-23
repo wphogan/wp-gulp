@@ -24,7 +24,7 @@
     "gulp-livereload": "",
     "gulp-load-plugins": "",
     "gulp-notify": "",
-    "gulp-pixrem": "",
+    "gulp-pxtorem": "",
     "gulp-plumber": "",
     "gulp-rename": "",
     "gulp-sass": "",

@@ -16,8 +16,8 @@ module.exports = function (gulp, plugins, config) {
             }))
           .pipe(plugins.plumber({errorHandler: onError}))
           .pipe(plugins.autoprefixer("last 3 version","safari 5", "ie 8", "ie 9", "ie 10", "ie 11"))
-          //.pipe(plugins.cleanCss())
-          //.pipe(plugins.sourcemaps.write('.')) // for external file add ('../maps')
+          .pipe(plugins.cleanCss())
+          .pipe(plugins.sourcemaps.write('.')) // for external file add ('../maps')
           .pipe(gulp.dest(config.destination ))
           .resume();
     };
