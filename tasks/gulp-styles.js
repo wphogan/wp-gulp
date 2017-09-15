@@ -4,6 +4,7 @@
 //
 module.exports = function (gulp, plugins, config) {
     return function () {
+        var autoprefixer = require('autoprefixer');
         var onError = require('./error.js').onError;
         return gulp.src(config.source.styles.sass_dir  + "/**/*.+(scss|sass)")
           .pipe(plugins.sourcemaps.init())
@@ -15,7 +16,7 @@ module.exports = function (gulp, plugins, config) {
               title: "Even coding rock-stars make mistakes"
             }))
           .pipe(plugins.plumber({errorHandler: onError}))
-          .pipe(plugins.autoprefixer("last 3 version","safari 5", "ie 8", "ie 9", "ie 10", "ie 11"))
+          .pipe(plugins.postcss([ autoprefixer("last 3 version", "ie 7", "ie 8", "ie 9", "ie 10", "ie 11", "last 5 Safari versions") ]))
           .pipe(plugins.cleanCss())
           .pipe(plugins.sourcemaps.write('.')) // for external file add ('../maps')
           .pipe(gulp.dest(config.destination ))

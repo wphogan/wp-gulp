@@ -5,47 +5,43 @@
   "sasslintConfig": "./config/sass_lint_config.yml",
   "main": "gulpfile.js",
   "scripts": {
-    "postinstall" : "./install.js"
+    "postinstall": "./install.js"
   },
   "author": "Bill Hogan",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "",
+    "gulp-postcss": "",
     "gulp": "",
-    "gulp-autoprefixer": "",
     "gulp-cache": "",
     "gulp-clean-css": "",
     "gulp-compass": "",
     "gulp-concat": "",
     "gulp-contains": "",
     "gulp-csscomb": "",
-    "gulp-sass-glob": "",
     "gulp-imagemin": "",
     "gulp-insert": "",
     "gulp-livereload": "",
     "gulp-load-plugins": "",
     "gulp-notify": "",
-    "gulp-pxtorem": "",
     "gulp-plumber": "",
+    "gulp-pxtorem": "",
     "gulp-rename": "",
     "gulp-sass": "",
+    "gulp-sass-glob": "",
     "gulp-sass-lint": "",
     "gulp-shell": "",
     "gulp-sourcemaps": "",
     "gulp-uglify": "",
     "gulp-uncss": "",
-    "require-dir": "",
-    "pa11y": ""
+    "pa11y": "",
+    "require-dir": ""
   },
   "dependencies": {
-    "prompt": "",
-    "fs": ""
-    },
-  "repository": {
+    "fs": "",
+    "prompt": ""
   },
-  "keywords": [
-
-  ],
-  "bugs": {
-
-  }
+  "repository": {},
+  "keywords": [],
+  "bugs": {}
 }
